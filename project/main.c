@@ -12,7 +12,7 @@ unsigned short sqColors[] = {COLOR_RED, COLOR_GREEN, COLOR_ORANGE, COLOR_BLUE};
 int redrawScreen = 1;
 
 void wdt_c_handler(){
-  static int sec2Count = 0;
+  /*static int sec2Count = 0;
   static int sec1Count = 0;
   if(sec2Count++ >= 125){
     sec2Count = 0;
@@ -23,8 +23,9 @@ void wdt_c_handler(){
     sec1Count = 0;
     current_position = (current_position+1) % NUM_POSITIONS;
     redrawScreen = 1;
-  }
+ }*/
 }
+
 void main(){
   led_init();
   configureClocks();
@@ -38,7 +39,7 @@ void main(){
   while(1){
     if(redrawScreen){
       redrawScreen = 0;
-      update_shape();
+      set_shape();
     }
     P1OUT &= ~LED; //leds off
     or_sr(0x10); //CPU OFF

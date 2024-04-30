@@ -20,5 +20,6 @@ extern int redrawScreen;
 extern int redrawScreen;
 
 void update_shape();
+void set_shape();
 
 #endif

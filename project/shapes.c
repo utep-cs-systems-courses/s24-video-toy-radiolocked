@@ -37,3 +37,22 @@ void update_shape(){
   last_position = pos;
   last_color = color;
 }
+
+void set_shape(){
+  static char last_color = 0;
+  redrawScreen = 0;
+  int color;
+  int size = 80;
+  and_sr(~8); //mask interrupts (GIE = 0)
+  color = current_color;
+  or_sr(8); //unmask interrupts
+
+  if(color == last_color){
+    return; //nothing to redraw
+  }
+  //erase old shape
+  fillRectangle((screenWidth / 2) - (size / 2), (screenHeight / 2) - (size / 2), size, size, BG_COLOR);
+  //draw new shape
+  fillRectangle((screenWidth / 2) - (size / 2), (screenHeight / 2) - (size / 2), size, size, sqColors[color]);
+  last_color = color; //remember for next redraw
+}

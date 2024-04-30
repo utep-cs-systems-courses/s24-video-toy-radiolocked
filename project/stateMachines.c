@@ -8,7 +8,7 @@ void state(int n){
   switch(n){
   case 1:
     redrawScreen = 1;
-    current_position = 0;
+    current_color = (current_color+1) % NUM_SQCOLORS;
     break;
 
   case 2:
