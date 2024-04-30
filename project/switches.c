@@ -27,41 +27,34 @@ switch_init()
   switch_update_interrupt_sense();
 }
 
-int switches = 0;
-
 void
 switch_interrupt_handler()
 {
   char p2val = switch_update_interrupt_sense();
-  /*
+  
   char sw_1 = (p2val & S1) ? 0 : S1;
   char sw_2 = (p2val & S2) ? 0 : S2;
   char sw_3 = (p2val & S3) ? 0 : S3;
   char sw_4 = (p2val & S4) ? 0 : S4;
 
   if(sw_1){
-    state(1);
+    //state(1);
+    redrawScreen = 1;
+    current_position = 0;
   }
   else if(sw_2){
-    state(2);
+    //state(2);
+    redrawScreen = 1;
+    current_position = 1;
   }
   else if(sw_3){
-    state(3);
+    //state(3);
+    redrawScreen = 1;
+    current_position = 2;
   }
   else if(sw_4){
-    state(4);
-  }*/
-
-  switches = ~p2val & SWITCHES;
-
-  if(switches & SWITCHES){
+    //state(4);
     redrawScreen = 1;
-    for(char swNum = 0; swNum < 4; swNum++){
-      int swFlag = 1 << swNum;
-      if(switches & swNum){
-	current_position = swNum;
-	break;
-      }
-    }
+    current_position = 3;
   }
 }
