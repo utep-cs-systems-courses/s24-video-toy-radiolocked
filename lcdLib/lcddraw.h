@@ -62,6 +62,10 @@ void drawRectOutline(u_char colMin, u_char rowMin, u_char width, u_char height, 
 
 void drawCircleOutline(int centerX, int centerY, int radius, u_int colorBGR);
 
+void drwaLine(int x1, int y1, int x2, int y2, u_int colorBGR);
+
+void drawTriangleOutline(int x1, int y1, int x2, int y2, int x3, int y3, u_int colorBGR);
+
 #endif // included
 
 

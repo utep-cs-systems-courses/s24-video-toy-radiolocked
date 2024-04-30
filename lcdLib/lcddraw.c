@@ -3,7 +3,7 @@
  */
 #include "lcdutils.h"
 #include "lcddraw.h"
-
+#include <stdlib.h>
 
 /** Draw single pixel at x,row 
  *
@@ -139,4 +139,37 @@ void drawCircleOutline(int centerX, int centerY, int radius, u_int colorBGR){
     }
   }
 }
+/*draw a line*/
+void drawLine(int x1, int y1, int x2, int y2, u_int colorBGR){
+  int dx = abs(x2 - x1);
+  int dy = abs(y2 - y1);
+  int sx, sy;
 
+  if (x1 < x2) sx = 1;
+  else sx = -1;
+  if (y1 < y2) sy = 1;
+  else sy = -1;
+
+  int err = dx - dy; //approximation error
+
+  while (x1 != x2 || y1 != y2) {
+    drawPixel(x1, y1, colorBGR);
+    int e2 = 2 * err;
+    if (e2 > -dy) {
+      err -= dy;
+      x1 += sx;
+    }
+    if (e2 < dx) {
+      err += dx;
+      y1 += sy;
+    }
+  }
+  drawPixel(x2, y2, colorBGR); //the last point is drawn
+}
+
+/*draw a triangle*/
+void drawTriangleOutline(int x1, int y1, int x2, int y2, int x3, int y3, u_int colorBGR){
+  drawLine(x1, y1, x2, y2, colorBGR);
+  drawLine(x2, y2, x3, y3, colorBGR);
+  drawLine(x3, y3, x1, y1, colorBGR);
+}
