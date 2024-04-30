@@ -38,23 +38,15 @@ switch_interrupt_handler()
   char sw_4 = (p2val & S4) ? 0 : S4;
 
   if(sw_1){
-    //state(1);
-    redrawScreen = 1;
-    current_position = 0;
+    state(1);
   }
   else if(sw_2){
-    //state(2);
-    redrawScreen = 1;
-    current_position = 1;
+    state(2);
   }
   else if(sw_3){
-    //state(3);
-    redrawScreen = 1;
-    current_position = 2;
+   state(3);
   }
   else if(sw_4){
-    //state(4);
-    redrawScreen = 1;
-    current_position = 3;
+    state(4);
   }
 }
