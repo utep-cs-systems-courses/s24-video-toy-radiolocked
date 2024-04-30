@@ -115,3 +115,28 @@ void drawRectOutline(u_char colMin, u_char rowMin, u_char width, u_char height,
   fillRectangle(colMin + width, rowMin, 1, height, colorBGR);
 }
 
+/*draw circle*/
+void drawCircleOutline(int centerX, int centerY, int radius, u_int colorBGR){
+  int x = radius;
+  int y = 0;
+  int err = 0;
+
+  while(x >= y){
+    drawPixel(centerX + x, centerY + y, colorBGR);
+    drawPixel(centerX + y, centerY + x, colorBGR);
+    drawPixel(centerX - y, centerY + x, colorBGR);
+    drawPixel(centerX - x, centerY + y, colorBGR);
+    drawPixel(centerX - x, centerY - y, colorBGR);
+    drawPixel(centerX - y, centerY - x, colorBGR);
+    drawPixel(centerX + y, centerY - x, colorBGR);
+    drawPixel(centerX + x, centerY - y, colorBGR);
+
+    y += 1;
+    err += 1 + 2*y;//aproximation error in boundary
+    if(2*(err - x) + 1 > 0){
+      x-= 1;
+      err += 1 - 2*x;
+    }
+  }
+}
+
