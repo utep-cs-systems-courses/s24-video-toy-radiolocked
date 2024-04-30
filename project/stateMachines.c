@@ -23,8 +23,9 @@ void state(int n){
 
   case 4:
     redrawScreen = 1;
-    current_position = 3;
+    current_shape = 3; //3 for triangle
     break;
+    
   default:
     break;
   }

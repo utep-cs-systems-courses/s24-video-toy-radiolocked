@@ -53,12 +53,20 @@ void set_shape(){
   //erase old shape
   drawRectOutline((screenWidth / 2) - (size / 2), (screenHeight / 2) - (size / 2), size, size, BG_COLOR);
   drawCircleOutline((screenWidth / 2), (screenHeight / 2), (size / 2), BG_COLOR);
+  drawTriangleOutline((screenWidth / 2), (screenHeight / 2) - (size / 2), (screenWidth / 2) - (size / 2), (screenHeight / 2) + (size / 2), (screenWidth / 2) + (size / 2), (screenHeight / 2) + (size / 2), BG_COLOR);
   //draw new shape
+  //if current_shape is a square
   if(current_shape == 1){
     drawRectOutline((screenWidth / 2) - (size / 2), (screenHeight / 2) - (size / 2), size, size, sqColors[color]);
   last_color = color; //remember for next redraw
+
+  //if current shape is a circle
   }else if(current_shape == 2){
     drawCircleOutline((screenWidth / 2), (screenHeight / 2), (size / 2), sqColors[color]);
     last_color = color; //remember for next redraw
+
+    //if current shape is a triangle
+  }else if(current_shape == 3){
+    drawTriangleOutline((screenWidth / 2), (screenHeight / 2) - (size / 2), (screenWidth / 2) - (size / 2), (screenHeight / 2) + (size / 2), (screenWidth / 2) + (size / 2), (screenHeight / 2) + (size / 2), sqColors[color]);
   }
 }
