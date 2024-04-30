@@ -4,6 +4,6 @@
 
 void led_init()
 {
-  P1DIR |= LEDS;
-  P1OUT &= ~LEDS; //leds initially off
+  P1DIR |= LED;
+  P1OUT |= LED; //green led on when cpu is on
 }

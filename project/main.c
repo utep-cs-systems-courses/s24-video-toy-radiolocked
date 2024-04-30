@@ -40,8 +40,8 @@ void main(){
       redrawScreen = 0;
       update_shape();
     }
-    P1OUT &= ~LEDS; //leds off
+    P1OUT &= ~LED; //leds off
     or_sr(0x10); //CPU OFF
-    P1OUT |= LEDS; //leds on
+    P1OUT |= LED; //leds on
   }
 }

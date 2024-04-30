@@ -2,9 +2,7 @@
 #define led_included
 #include <msp430.h>
 
-#define LED_RED BIT6
-#define LED_GREEN BIT0
-#define LEDS (BIT0 | BIT6) //control both leds
+#define LED BIT6 //bit 0 required for display
 
 void led_init();
 
