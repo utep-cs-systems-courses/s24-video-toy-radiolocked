@@ -8,18 +8,11 @@
 #define NUM_SQCOLORS 4
 #define BG_COLOR COLOR_BLACK
 
-typedef struct{
-  short col, row;
-}Pos;
-
-extern Pos positions[];
-
 extern unsigned short sqColors[];
-extern char current_position, current_color, current_shape;
+extern char current_color, current_shape;
 extern int redrawScreen;
 extern int redrawScreen;
 
-void update_shape();
 void set_shape();
 
 #endif
