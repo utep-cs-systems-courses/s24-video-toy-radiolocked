@@ -51,8 +51,14 @@ void set_shape(){
     return; //nothing to redraw
   }
   //erase old shape
-  fillRectangle((screenWidth / 2) - (size / 2), (screenHeight / 2) - (size / 2), size, size, BG_COLOR);
+  drawRectOutline((screenWidth / 2) - (size / 2), (screenHeight / 2) - (size / 2), size, size, BG_COLOR);
+  drawCircleOutline((screenWidth / 2), (screenHeight / 2), (size / 2), BG_COLOR);
   //draw new shape
-  fillRectangle((screenWidth / 2) - (size / 2), (screenHeight / 2) - (size / 2), size, size, sqColors[color]);
+  if(current_shape == 1){
+    drawRectOutline((screenWidth / 2) - (size / 2), (screenHeight / 2) - (size / 2), size, size, sqColors[color]);
   last_color = color; //remember for next redraw
+  }else if(current_shape == 2){
+    drawCircleOutline((screenWidth / 2), (screenHeight / 2), (size / 2), sqColors[color]);
+    last_color = color; //remember for next redraw
+  }
 }

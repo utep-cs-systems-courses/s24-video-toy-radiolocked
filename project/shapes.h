@@ -15,7 +15,7 @@ typedef struct{
 extern Pos positions[];
 
 extern unsigned short sqColors[];
-extern char current_position, current_color;
+extern char current_position, current_color, current_shape;
 extern int redrawScreen;
 extern int redrawScreen;
 

@@ -13,12 +13,12 @@ void state(int n){
 
   case 2:
     redrawScreen = 1;
-    current_position = 1;
+    current_shape = 1; //1 for square
     break;
 
   case 3:
     redrawScreen = 1;
-    current_position = 2;
+    current_shape = 2; //2 for circle
     break;
 
   case 4:

@@ -8,6 +8,7 @@
 
 char current_position = 0;
 char current_color = 0;
+char current_shape = 0;
 unsigned short sqColors[] = {COLOR_RED, COLOR_GREEN, COLOR_ORANGE, COLOR_BLUE};
 int redrawScreen = 1;
 
