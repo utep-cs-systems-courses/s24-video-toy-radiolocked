@@ -4,6 +4,10 @@
 #include "libTimer.h"
 #include "shapes.h"
 
+void squareNoise(){
+  
+}
+
 void state(int n){
   switch(n){
   case 1:

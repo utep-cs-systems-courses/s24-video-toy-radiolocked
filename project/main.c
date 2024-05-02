@@ -16,9 +16,9 @@ void wdt_c_handler(){
 }
 
 void main(){
-  led_init();
   configureClocks();
   lcd_init();
+  led_init();
   switch_init();
 
   enableWDTInterrupts();

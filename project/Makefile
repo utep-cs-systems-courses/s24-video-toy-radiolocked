@@ -10,7 +10,7 @@ AS              = msp430-elf-gcc -mmcu=${CPU} -c
 all:msquares.elf
 
 #additional rules for files
-msquares.elf: ${COMMON_OBJECTS} wdt_handler.o led.o shapes.o switches.o p2_interrupt_handler.o main.o stateMachines.o
+msquares.elf: ${COMMON_OBJECTS} wdt_handler.o led.o shapes.o switches.o p2_interrupt_handler.o main.o stateMachines.o buzzer.o
 	${CC} ${CFLAGS} ${LDFLAGS} -o $@ $^ -lTimer -lLcd
 
 load: msquares.elf
