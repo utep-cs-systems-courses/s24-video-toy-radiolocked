@@ -29,7 +29,6 @@ void main(){
   while(1){
     if(redrawScreen){
       redrawScreen = 0;
-      set_shape();
     }
     P1OUT &= ~LED; //leds off
     or_sr(0x10); //CPU OFF
