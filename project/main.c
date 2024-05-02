@@ -5,6 +5,7 @@
 #include "led.h"
 #include "switches.h"
 #include "shapes.h"
+#include "buzzer.h"
 
 char current_color = 0;
 char current_shape = 0;
@@ -20,7 +21,7 @@ void main(){
   lcd_init();
   led_init();
   switch_init();
-
+  buzzer_init();
   enableWDTInterrupts();
   or_sr(0x8);
 
